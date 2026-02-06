@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Rose Day 🌹</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0f172a;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .page {
+      display: none;
+      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .active {
+      display: flex;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(45deg, #ff4d6d, #ff758f);
+      color: white;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 0 15px rgba(255, 77, 109, 0.6);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(255, 77, 109, 1);
+    }
+
+    /* FLOATING HEARTS BACKGROUND */
+    .floating-heart {
+      position: fixed;
+      bottom: -50px;
+      color: #ff4d6d;
+      font-size: 24px;
+      animation: floatUp linear infinite;
+      opacity: 0.9;
+      z-index: 1;
+      text-shadow:
+        0 0 10px #ff4d6d,
+        0 0 20px #ff4d6d,
+        0 0 30px #ff4d6d;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    /* CLICK HEART */
+    .click-heart {
+      position: fixed;
+      color: #f3aab7;
+      font-size: 30px;
+      animation: clickFloat 2s forwards;
+      pointer-events: none;
+      z-index: 999;
+      text-shadow: 0 0 10px #ff4d6d;
+    }
+
+    @keyframes clickFloat {
+      to {
+        transform: translateY(-150px);
+        opacity: 0;
+      }
+    }
+
+    /* MOUSE FOLLOW HEART */
+    #mouseHeart {
+      position: fixed;
+      pointer-events: none;
+      font-size: 20px;
+      color: #ef9aa9;
+      z-index: 999;
+      text-shadow: 0 0 10px #ff4d6d;
+    }
+
+    /* IMAGE */
+    img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    }
+
+    .letter {
+      max-width: 600px;
+      background: rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(255,77,109,0.3);
+    }
+
+    .rose-text {
+      font-size: 60px;
+      background: linear-gradient(45deg, #ff758f, #ff4d6d, #ff8fa3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite alternate;
+    }
+    .rose-text1 {
+      font-size: 60px;
+      background: linear-gradient(45deg, #ff758f, #ff4d6d, #ff8fa3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite alternate;
+    }
+    .rose-text2 {
+      font-size: 60px;
+      background: linear-gradient(45deg, #ff758f, #ff4d6d, #ff8fa3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff4d6d; }
+      to { text-shadow: 0 0 30px #ff758f; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Mouse heart -->
+<div id="mouseHeart">❤</div>
+
+<!-- HOME -->
+<div class="page active" id="home">
+  <h1 style="font-size:50px; color: #ff4d6d;">Hi Mardhal ❤️</h1>
+  <p style="font-size:22px;">I made this specially for you 🌹</p>
+  <button onclick="nextPage('moments')">Start Journey</button>
+</div>
+
+<!-- MOMENTS -->
+<div class="page" id="moments">
+  <h1>Our Beautiful Moments ❤️</h1>
+  <p>May not have more moments between us now. But I'm sure that we will create it future.... 😉</p>
+  <p>Wait and see the slide show of our memories 😊</p>
+  <img id="slideshow" src="https://images.unsplash.com/photo-1518199266791-5375a83190b7">
+  <button onclick="nextPage('letter')">Letter For You</button>
+</div>
+
+<!-- LETTER -->
+<div class="page" id="letter">
+  <div class="letter">
+    <h2>A Letter For You 💌</h2>
+    <p>
+      From the moment you came into my life, everything became more beautiful 🌹
+      <br><br>
+      One Small Pickup line for you.
+      <br><br>
+      Thellaga unnav ani Taj Mahal ki.....<br>
+      Challaga unnav ani Himalayalaki..... <br>
+      Hot ga unnav ani suryudiki.....<br>
+      Andham ga unnav ani neeku..... <br> cheppala cheppu 
+      <br><br>
+      Live the moment Mardhal ❤️
+    </p>
+  </div>
+  <button onclick="nextPage('surprise')">Open Surprise</button>
+</div>
+
+<!-- SURPRISE -->
+<div class="page" id="surprise">
+  <h2 id="roseText1" class="rose-text1" style="display:none;">This 🌹 is for you.<br> </h2>
+  <h1 id="roseText" class="rose-text" style="display:none;">Happy Rose Day 🌹</h1>
+  <h2 id="roseText2" class="rose-text2" style="display:none;">My Lovely Mardhal 💖.<br> </h2>
+  <button onclick="showSurprise()">Click for Surprise 🌹</button>
+</div>
+
+<script>
+
+// PAGE NAVIGATION
+function nextPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+}
+
+// FLOATING HEARTS (FIXED VISIBILITY)
+function createFloatingHeart() {
+  const heart = document.createElement('div');
+  heart.className = 'floating-heart';
+  heart.innerHTML = '❤';
+
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.fontSize = (20 + Math.random() * 30) + 'px';
+  heart.style.animationDuration = (6 + Math.random() * 6) + 's';
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 12000);
+}
+
+setInterval(createFloatingHeart, 300);
+
+// CLICK HEARTS
+document.addEventListener('mousemove', function(e) {
+  const heart = document.createElement('div');
+  heart.className = 'click-heart';
+  heart.innerHTML = '❤';
+  heart.style.left = e.clientX + 'px';
+  heart.style.top = e.clientY + 'px';
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 2000);
+});
+
+// MOUSE FOLLOW HEART
+const mouseHeart = document.getElementById('mouseHeart');
+document.addEventListener('mousemove', e => {
+  mouseHeart.style.left = e.clientX + 'px';
+  mouseHeart.style.top = e.clientY + 'px';
+});
+
+// SLIDESHOW
+const images = [
+  "WhatsApp Image 2026-02-06 at 14.44.48.jpeg",
+  "WhatsApp Image 2026-02-06 at 14.44.47.jpeg",
+  "WhatsApp Image 2026-02-06 at 14.44.22.jpeg"
+];
+
+let index = 0;
+
+function nextImage() {
+  index = (index + 1) % images.length;
+  document.getElementById('slideshow').src = images[index];
+}
+
+setInterval(nextImage, 3000);
+
+// SURPRISE
+function showSurprise() {
+  document.getElementById('roseText1').style.display = 'block';
+  document.getElementById('roseText').style.display = 'block';
+  document.getElementById('roseText2').style.display = 'block';
+
+  // explosion hearts
+  for (let i = 0; i < 50; i++) {
+    const heart = document.createElement('div');
+    heart.className = 'click-heart';
+    heart.innerHTML = '❤';
+    heart.style.left = '50%';
+    heart.style.top = '50%';
+    heart.style.transform = `translate(${Math.random()*600-300}px, ${Math.random()*600-300}px)`;
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 2000);
+  }
+}
+
+</script>
+
+</body>
+</html>
