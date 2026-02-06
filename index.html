@@ -160,6 +160,11 @@
 </head>
 <body>
 
+<!-- Background Music-->
+ <audio id="bgMusic" loop>
+  <source src="hoyna_hoyna_bgm.mp3" type="audio/mpeg">
+</audio>
+
 <!-- Mouse heart -->
 <div id="mouseHeart">❤</div>
 
@@ -287,7 +292,21 @@ function showSurprise() {
   }
 }
 
+ // AUDIO
+window.addEventListener("load", () => {
+  const music = document.getElementById("bgMusic");
+
+  const playPromise = music.play();
+
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      document.addEventListener("click", () => music.play(), { once: true });
+    });
+  }
+});
+
 </script>
 
 </body>
 </html>
+
